@@ -90,7 +90,7 @@
                     console.log(data.message)
                      output.innerHTML += `<br><strong>${data.message}</strong>`
                 }else{
-                    output.innerHTML += `<br><strong>Response from broker service </strong>`
+                    output.innerHTML += `<br><strong>Response from broker service </strong>: ${data.message}`
                 }
             })
             .catch(err=>{
@@ -101,10 +101,10 @@
         
         logBtn.addEventListener("click",function(){
             const payload = {
-                action:'log',
-                auth:{
-                    name:"event",
-                    password:"Some log data"
+                action: "log",
+                log: {
+                    name: "event",
+                    data: "Some kind of data",
                 }
             }
 
@@ -126,7 +126,7 @@
                     console.log(data.message)
                      output.innerHTML += `<br><strong>${data.message}</strong>`
                 }else{
-                    output.innerHTML += `<br><strong>Response from broker service </strong>`
+                    output.innerHTML += `<br><strong>Response from broker service </strong>: ${data.message}`
                 }
             })
             .catch(err=>{
